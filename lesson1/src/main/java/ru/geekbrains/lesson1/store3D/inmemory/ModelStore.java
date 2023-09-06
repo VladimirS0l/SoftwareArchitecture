@@ -7,6 +7,7 @@ import ru.geekbrains.lesson1.store3D.models.Scene;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ModelStore implements IModelChanger {
 
@@ -20,6 +21,24 @@ public class ModelStore implements IModelChanger {
     public void add(PoligonalModel model){
         models.add(model);
         notifyChange();
+    }
+
+    public void add(Camera camera){
+        cameras.add(camera);
+        notifyChange();
+    }
+
+    public void add(Flash flash){
+        flashes.add(flash);
+        notifyChange();
+    }
+
+    public void add(Scene scene){
+        scenes.add(scene);
+        notifyChange();
+    }
+    public Scene getScene(int id) {
+        return scenes.stream().filter((c) -> c.getId() == id).findFirst().get();
     }
 
     @Override
@@ -37,5 +56,16 @@ public class ModelStore implements IModelChanger {
     @Override
     public void RemoveModelChanger(ModelChangedObserver o) {
         observers.remove(o);
+    }
+
+    @Override
+    public String toString() {
+        return "ModelStore{" +
+                "\nobservers=" + observers +
+                ", \nmodels=" + models +
+                ", \nflashes=" + flashes +
+                ", \nscenes=" + scenes +
+                ", \ncameras=" + cameras +
+                '}';
     }
 }

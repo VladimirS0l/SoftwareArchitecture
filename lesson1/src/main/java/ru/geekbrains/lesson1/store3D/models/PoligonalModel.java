@@ -4,7 +4,6 @@ import java.util.List;
 
 public class PoligonalModel {
 
-
     private List<Poligon> poligins;
 
     private List<Texture> textures;
@@ -24,5 +23,13 @@ public class PoligonalModel {
     public PoligonalModel(List<Poligon> poligins, List<Texture> textures) {
         this.poligins = poligins;
         this.textures = textures;
+    }
+
+    @Override
+    public String toString() {
+        return "PoligonalModel{" +
+                "poligins=" + poligins +
+                ", textures=" + textures +
+                '}';
     }
 }
