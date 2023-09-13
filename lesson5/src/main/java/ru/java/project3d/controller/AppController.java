@@ -35,7 +35,7 @@ public class AppController {
             System.out.println("7. Выполнить рендер модели");
             System.out.println("8. Добавить модель");
             System.out.println("9. Выполнить удаление модели");
-            System.out.println("10. Выполнить удаление модели");
+            System.out.println("10. Выполнить редактирование модели");
             System.out.println("0. ЗАВЕРШЕНИЕ РАБОТЫ ПРИЛОЖЕНИЯ");
             System.out.print("Пожалуйста, выберите пункт меню: ");
             if (scanner.hasNextInt()) {
