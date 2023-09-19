@@ -1,0 +1,10 @@
+package ru.java.lesson6.notes.infrastructure.persistance.configurations;
+
+import ru.java.lesson6.notes.core.domain.Note;
+import ru.java.lesson6.notes.infrastructure.persistance.ModelConfiguration;
+
+public class NoteConfiguration implements ModelConfiguration<Note> {
+
+    //TODO: Описываем конкретный маппинг типа Note к объекту БД
+
+}
