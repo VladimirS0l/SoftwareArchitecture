@@ -15,6 +15,7 @@
         <module name="lesson6" />
         <module name="lesson7" />
         <module name="lesson1" />
+        <module name="lesson10" />
         <module name="lesson2" />
         <module name="lesson3" />
       </profile>
@@ -26,6 +27,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="lesson10" options="-parameters" />
       <module name="lesson7" options="-parameters" />
       <module name="lesson9" options="-parameters" />
       <module name="lessonTest" options="-parameters" />
