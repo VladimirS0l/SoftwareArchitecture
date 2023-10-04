@@ -13,6 +13,7 @@ import java.util.List;
 
 @Repository
 public class PetRepositoryImpl implements PetRepository {
+
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
