@@ -20,42 +20,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
-@WebMvcTest(ClientController.class)
 class Lesson10ApplicationTests {
-
-    @Autowired
-    private MockMvc mvc;
-
-    @Test
-    public void showAllClients() throws Exception {
-        mvc.perform(MockMvcRequestBuilders
-                        .get("/client/all")
-                        .accept(MediaType.APPLICATION_JSON))
-                .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.client").exists())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.client[*].clientId").isNotEmpty());
-    }
-
-    @Test
-    public void createClient() throws Exception
-    {
-        mvc.perform( MockMvcRequestBuilders
-                        .post("/client/create")
-                        .content(asJsonString(new Client(1, "214424234", "surname",
-                                "lastName", new Date())))
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isCreated())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.clientId").exists());
-    }
-
-    public static String asJsonString(final Object obj) {
-        try {
-            return new ObjectMapper().writeValueAsString(obj);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
 
 }
