@@ -5,14 +5,11 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.java.lesson10.exception.AppError;
-import ru.java.lesson10.models.Client;
 import ru.java.lesson10.models.Consultation;
-import ru.java.lesson10.repository.impl.ConsultationRepository;
 import ru.java.lesson10.service.ConsultationService;
 
 import java.util.List;
@@ -22,12 +19,12 @@ import java.util.List;
 @Api(
         tags="Консультации",
         description = "Методы работы с консультациями")
-public class ConcultationController {
+public class ConsultationController {
 
     private final ConsultationService consultationService;
 
     @Autowired
-    public ConcultationController(ConsultationService consultationService) {
+    public ConsultationController(ConsultationService consultationService) {
         this.consultationService = consultationService;
     }
 

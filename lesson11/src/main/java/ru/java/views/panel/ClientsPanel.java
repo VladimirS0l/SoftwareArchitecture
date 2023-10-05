@@ -36,10 +36,10 @@ public class ClientsPanel extends JPanel {
     public ClientsPanel() throws JsonProcessingException {
         DefaultTableModel tableModel = new DefaultTableModel(getAllClientsVector(getColumnHeaderVector()),
                 getColumnHeaderVector());
-//Set data and columns in tableModel to JTable
-        JTable yourTable= new JTable(tableModel);
 
-//After data Changed fire change detector
+        JTable yourTable= new JTable(tableModel);
+        yourTable.setRowHeight(50);
+
 
         JPanel panCenter = new JPanel();
         JPanel panSouth = new JPanel(new GridLayout(4, 1));
@@ -80,6 +80,7 @@ public class ClientsPanel extends JPanel {
         panSouth.add(delete);
         panSouth.add(refresh);
         add(panSouth, BorderLayout.SOUTH);
+        setSize(600,600);
         setVisible(true);
 
     }
